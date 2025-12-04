@@ -75,9 +75,24 @@ GET /api/products?max=10000
   "totalProducts": 5,
   "matchedCount": 3,
   "matchedProducts": [
-    { "id": 1, "name": "手機", "price": 12900 },
-    { "id": 3, "name": "平板", "price": 15900 },
-    { "id": 5, "name": "螢幕", "price": 6990 }
+      {
+    "id": 1,
+    "category": "Milk Tea",
+    "name": "珍珠奶茶",
+    "price": 75,
+    "stock": 120,
+    "tags": ["招牌", "甜", "人氣"],
+    "image_url": "https://images.unsplash.com/photo-1718065598477-505b9c2e764d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 2,
+    "category": "Milk Tea",
+    "name": "抹茶拿鐵",
+    "price": 85,
+    "stock": 80,
+    "tags": ["布丁", "甜點口感", "人氣"],
+    "image_url": "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },....
   ]
 }
 ```
@@ -86,12 +101,6 @@ GET /api/products?max=10000
 - `min`：最低價格（選填，預設為 0）
 - `max`：最高價格（選填，預設為無上限）
 
-**商品清單：**
-- 手機：12,900 元
-- 筆電：32,900 元
-- 平板：15,900 元
-- 耳機：2,990 元
-- 螢幕：6,990 元
 
 ## 專案結構
 
@@ -160,18 +169,6 @@ curl https://your-app.zeabur.app/api/products?min=5000&max=20000
 - 部署後環境變數 `PORT` 會自動設定
 - 每次推送到 `main` 分支會自動觸發重新部署
 
-## 分支說明
-
-- `main`: 基礎 API 服務範本（僅 health check）
-- `feature/weather-api`: 完整的天氣 API 功能（串接 CWA 氣象資料）
-
-學生可以在此基礎上練習串接外部 API 或新增其他功能。
-
-## 注意事項
-
-1. 請確保已申請 CWA API Key 並正確設定在 `.env` 檔案中
-2. API Key 有每日呼叫次數限制，請參考 CWA 平台說明
-3. 不要將 `.env` 檔案上傳到 Git 版本控制
 
 ## 錯誤處理
 
